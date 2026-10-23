@@ -2,7 +2,7 @@
 
 61 specialist workflows, a chief of staff and executable local helpers, published
 by Solaris Technologies. Version 0.66.0 carries the reviewed security corrections in the
-[Solaris Dev Shop 0.66 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/0391e15cc52ddfa88a6c02b5997fd9955e214491).
+[Solaris Dev Shop 0.66 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/cd1898c6dc062a2dcf01a56b53403023c1994c8d).
 This separate Claude distribution keeps the complete roster while avoiding the
 universal repository's copies for other platforms.
 

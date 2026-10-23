@@ -1,8 +1,8 @@
 # Solaris Dev Shop for Claude
 
 61 specialist workflows, a chief of staff and executable local helpers, published
-by Solaris Technologies. Version 0.65.0 carries the reviewed security corrections in the
-[Solaris Dev Shop 0.65 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/0d2ae8e76cba4e56dc01d9c621e553179b34c40e).
+by Solaris Technologies. Version 0.66.0 carries the reviewed security corrections in the
+[Solaris Dev Shop 0.66 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/0391e15cc52ddfa88a6c02b5997fd9955e214491).
 This separate Claude distribution keeps the complete roster while avoiding the
 universal repository's copies for other platforms.
 
@@ -82,3 +82,5 @@ or shehryar@solaristek.com. Published under the upstream [MIT license](LICENSE),
 with the bundled notices and attribution retained.
 
 Canonical GitHub CI is retained as inert source data under `source-config/.github`; this distribution runs its own exact packaging validation. The 0.65 candidate is not a provider approval.
+
+Loading this package does not start Docker, MCP/database services, an updater or learning rewrites. Optional setup is task-scoped. The managed CLI installer uses only offline router checks; complete developer and release QA remain separate gates.

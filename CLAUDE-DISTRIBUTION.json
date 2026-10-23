@@ -1,11 +1,11 @@
 {
   "distribution": "Claude plugin directory source",
-  "version": "0.65.0",
+  "version": "0.66.0",
   "parent_repository": "https://github.com/Shaisolaris/solaris-dev-shop-plugins",
-  "parent_revision": "83fcb4fe0738bb4fed75716c4ec85340822a74bd",
+  "parent_revision": "023f610ef085101c1bb01f2ec0760390af12c4f1",
   "parent_path": "plugin",
-  "canonical_source_revision": "0d2ae8e76cba4e56dc01d9c621e553179b34c40e",
-  "unchanged_canonical_files": 1199,
+  "canonical_source_revision": "0391e15cc52ddfa88a6c02b5997fd9955e214491",
+  "unchanged_canonical_files": 1200,
   "workflows": {
     "specialists": 61,
     "coordinator": 1

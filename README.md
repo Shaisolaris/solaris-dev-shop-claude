@@ -1,8 +1,8 @@
 # Solaris Dev Shop for Claude
 
 61 specialist workflows, a chief of staff and executable local helpers, published
-by Solaris Technologies. Version 0.64.0 preserves the accepted
-[Solaris Dev Shop 0.64 source](https://github.com/Shaisolaris/solaris-dev-shop/tree/3a577e42c48473f6ef8680950dd55c067820d5d3).
+by Solaris Technologies. Version 0.65.0 carries the reviewed security corrections in the
+[Solaris Dev Shop 0.65 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/0d2ae8e76cba4e56dc01d9c621e553179b34c40e).
 This separate Claude distribution keeps the complete roster while avoiding the
 universal repository's copies for other platforms.
 
@@ -71,7 +71,7 @@ proof that every role gained new executable behavior. Native discovery and local
 helper checks are separate from a live model's skill activation and production
 security or quality certification. Host support also differs across Claude apps.
 
-`SOLARIS-BUILD-SOURCE.json` records all 1,197 canonical file hashes. The additional
+`SOLARIS-BUILD-SOURCE.json` records all 1,199 canonical file hashes. The additional
 `CLAUDE-DISTRIBUTION.json` identifies this provider-facing packaging operation.
 The bundled 740,394-byte `google-fonts.csv` is readable design-reference data;
 it is retained intact and may require a directory reviewer because it exceeds
@@ -80,3 +80,5 @@ the directory's 256 KiB non-image/font-file threshold. It is not an executable.
 Support: [GitHub issues](https://github.com/Shaisolaris/solaris-dev-shop-claude/issues)
 or shehryar@solaristek.com. Published under the upstream [MIT license](LICENSE),
 with the bundled notices and attribution retained.
+
+Canonical GitHub CI is retained as inert source data under `source-config/.github`; this distribution runs its own exact packaging validation. The 0.65 candidate is not a provider approval.

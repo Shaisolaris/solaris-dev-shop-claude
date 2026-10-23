@@ -1,0 +1,65 @@
+name: Claude source packaging conformance
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  exact-package-and-caller:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: Shaisolaris/solaris-dev-shop-plugins
+          ref: 83fcb4fe0738bb4fed75716c4ec85340822a74bd
+          path: reference
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Whole-source bytes, modes, roster and bounded metadata
+        run: |
+          python -B - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          source=Path('reference/plugin');root=Path('candidate')
+          overlays={'README.md','.claude-plugin/plugin.json','SOLARIS-BUILD-SOURCE.json'}
+          additions={'CLAUDE-DISTRIBUTION.json','.github/workflows/validate-claude.yml'}
+          record=json.loads((root/'SOLARIS-BUILD-SOURCE.json').read_text())
+          expected=json.loads((source/'SOLARIS-BUILD-SOURCE.json').read_text())
+          moved=record['relocated_repository_configuration']
+          assert moved=={n:'source-config/'+n for n in expected['canonical_files'] if n.startswith('.github/')}
+          names={p.relative_to(source).as_posix() for p in source.rglob('*') if p.is_file()}
+          actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts}
+          assert actual=={moved.get(n,n) for n in names}|additions
+          for n in names-overlays:
+              a=root/moved.get(n,n);b=source/n
+              assert not a.is_symlink() and a.read_bytes()==b.read_bytes(),n
+              assert bool(a.stat().st_mode&0o111)==bool(b.stat().st_mode&0o111),n
+          assert record['canonical_files']=={moved.get(n,n):h for n,h in expected['canonical_files'].items()}
+          expected['canonical_files']=record['canonical_files']
+          expected['source_path_map'].update(moved)
+          expected['relocated_repository_configuration']=moved
+          assert record==expected
+          for n,h in record['canonical_files'].items():assert hashlib.sha256((root/n).read_bytes()).hexdigest()==h,n
+          assert record['source_commit']=='0d2ae8e76cba4e56dc01d9c621e553179b34c40e'
+          assert record['employee_roles']==61 and record['coordinators']==1
+          assert len(record['canonical_files'])==1199
+          m=json.loads((root/'.claude-plugin/plugin.json').read_text())
+          original=json.loads((source/'.claude-plugin/plugin.json').read_text())
+          for n in ['homepage','repository']:
+              assert m.pop(n)=='https://github.com/Shaisolaris/solaris-dev-shop-claude'
+              original.pop(n)
+          assert m==original and m['version']=='0.65.0'
+          print('PASS:1199 canonical files,exact runtime/adapters,61+1 roster and bounded overlays')
+          PY
+      - name: Actual isolated coordinator and WordPress data-boundary tests
+        run: |
+          python -B candidate/control-plane/meta_control_plane.py self-test
+          cd candidate
+          python -B -m unittest discover -s tests -p test_wordpress_json_fields.py

@@ -1,21 +1,33 @@
 {
   "distribution": "Claude plugin directory source",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "parent_repository": "https://github.com/Shaisolaris/solaris-dev-shop-plugins",
-  "parent_revision": "df92aafeaab0213d545b764776aa19bc6be1a10d",
+  "parent_revision": "83fcb4fe0738bb4fed75716c4ec85340822a74bd",
   "parent_path": "plugin",
-  "canonical_source_revision": "3a577e42c48473f6ef8680950dd55c067820d5d3",
-  "unchanged_canonical_files": 1197,
+  "canonical_source_revision": "0d2ae8e76cba4e56dc01d9c621e553179b34c40e",
+  "unchanged_canonical_files": 1199,
   "workflows": {
     "specialists": 61,
     "coordinator": 1
   },
   "metadata_overlays": [
     "README.md",
-    ".claude-plugin/plugin.json"
+    ".claude-plugin/plugin.json",
+    "SOLARIS-BUILD-SOURCE.json"
   ],
   "added_metadata": [
-    "CLAUDE-DISTRIBUTION.json"
+    "CLAUDE-DISTRIBUTION.json",
+    ".github/workflows/validate-claude.yml"
   ],
+  "relocated_source_ci": {
+    ".github/ISSUE_TEMPLATE/bug.md": "source-config/.github/ISSUE_TEMPLATE/bug.md",
+    ".github/ISSUE_TEMPLATE/config.yml": "source-config/.github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature.md": "source-config/.github/ISSUE_TEMPLATE/feature.md",
+    ".github/ISSUE_TEMPLATE/new-employee.md": "source-config/.github/ISSUE_TEMPLATE/new-employee.md",
+    ".github/ISSUE_TEMPLATE/question.md": "source-config/.github/ISSUE_TEMPLATE/question.md",
+    ".github/PULL_REQUEST_TEMPLATE.md": "source-config/.github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/ci.yml": "source-config/.github/workflows/ci.yml",
+    ".github/workflows/try-router.yml": "source-config/.github/workflows/try-router.yml"
+  },
   "provider_approval": false
 }

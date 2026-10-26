@@ -1,8 +1,8 @@
 # Solaris Dev Shop for Claude
 
 61 specialist workflows, a chief of staff and executable local helpers, published
-by Solaris Technologies. Version 0.66.0 carries the reviewed security corrections in the
-[Solaris Dev Shop 0.66 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/cd1898c6dc062a2dcf01a56b53403023c1994c8d).
+by Solaris Technologies. Version 0.68.0 carries the reviewed security corrections in the
+[Solaris Dev Shop 0.68 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/c7c9b395795f488dd3c48122ff916970438b67e6).
 This separate Claude distribution keeps the complete roster while avoiding the
 universal repository's copies for other platforms.
 

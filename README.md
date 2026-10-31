@@ -1,8 +1,8 @@
 # Solaris Dev Shop for Claude
 
 61 specialist workflows, a chief of staff and executable local helpers, published
-by Solaris Technologies. Version 0.66.0 carries the reviewed security corrections in the
-[Solaris Dev Shop 0.66 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/cd1898c6dc062a2dcf01a56b53403023c1994c8d).
+by Solaris Technologies. Version 0.68.0 carries the reviewed security corrections in the
+[Solaris Dev Shop 0.68 candidate](https://github.com/Shaisolaris/solaris-dev-shop/tree/c7c9b395795f488dd3c48122ff916970438b67e6).
 This separate Claude distribution keeps the complete roster while avoiding the
 universal repository's copies for other platforms.
 
@@ -71,7 +71,7 @@ proof that every role gained new executable behavior. Native discovery and local
 helper checks are separate from a live model's skill activation and production
 security or quality certification. Host support also differs across Claude apps.
 
-`SOLARIS-BUILD-SOURCE.json` records all 1,199 canonical file hashes. The additional
+`SOLARIS-BUILD-SOURCE.json` records all 1,201 canonical file hashes. The additional
 `CLAUDE-DISTRIBUTION.json` identifies this provider-facing packaging operation.
 The bundled 740,394-byte `google-fonts.csv` is readable design-reference data;
 it is retained intact and may require a directory reviewer because it exceeds
@@ -81,6 +81,6 @@ Support: [GitHub issues](https://github.com/Shaisolaris/solaris-dev-shop-claude/
 or shehryar@solaristek.com. Published under the upstream [MIT license](LICENSE),
 with the bundled notices and attribution retained.
 
-Canonical GitHub CI is retained as inert source data under `source-config/.github`; this distribution runs its own exact packaging validation. The 0.65 candidate is not a provider approval.
+Canonical GitHub CI is retained as inert source data under `source-config/.github`; this distribution runs its own exact packaging validation. The 0.68 candidate is not a provider approval.
 
 Loading this package does not start Docker, MCP/database services, an updater or learning rewrites. Optional setup is task-scoped. The managed CLI installer uses only offline router checks; complete developer and release QA remain separate gates.
